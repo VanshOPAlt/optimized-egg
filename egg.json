@@ -4,9 +4,9 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2024-03-30T06:41:56+01:00",
-    "name": "SovietEgg - Reyo",
-    "author": "avex@reyo.run",
+    "exported_at": "2025-03-30T06:41:56+01:00",
+    "name": " optimized-egg",
+    "author": "support@flexahost.in",
     "description": null,
     "features": null,
     "docker_images": {
@@ -19,7 +19,7 @@
     },
     "file_denylist": [
     ],
-    "startup": "bash install.sh && curl -Os \"https:\/\/raw.githubusercontent.com\/AvexXS\/SovietEgg\/main\/install.sh\"",
+    "startup": "bash install.sh && curl -Os \"https:\/\/raw.githubusercontent.com\/VanshOPAlt\/ optimized-egg\/main\/install.sh\"",
     "config": {
         "files": "{\r\n    \"server.properties\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"server-ip\": \"0.0.0.0\",\r\n            \"server-port\": \"{{server.build.default.port}}\",\r\n            \"query.port\": \"{{server.build.default.port}}\"\r\n        }\r\n    },\r\n    \"config.yml\": {\r\n        \"parser\": \"yaml\",\r\n        \"find\": {\r\n            \"listeners[0].host\": \"0.0.0.0:{{server.build.default.port}}\",\r\n            \"servers.*.address\": {\r\n                \"127.0.0.1\": \"{{config.docker.interface}}\",\r\n                \"localhost\": \"{{config.docker.interface}}\"\r\n            }\r\n        }\r\n    }\r\n}",
         "startup": "{\r\n    \"done\": \")! For help, type \"\r\n}",
@@ -28,7 +28,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/ash\r\n# Communism Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\napt update\r\napt-get install -y curl\r\ncd \/mnt\/server\r\ncurl -o install.sh https:\/\/raw.githubusercontent.com\/AvexXS\/SovietEgg\/main\/install.sh",
+            "script": "#!\/bin\/ash\r\n# Communism Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\napt update\r\napt-get install -y curl\r\ncd \/mnt\/server\r\ncurl -o install.sh https:\/\/raw.githubusercontent.com\/VanshOPAlt\/optimized-egg\/main\/install.sh",
             "container": "debian:buster-slim",
             "entrypoint": "bash"
         }
