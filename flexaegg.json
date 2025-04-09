@@ -4,13 +4,13 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2023-08-23T20:49:03+05:30",
-    "name": "MultiEgg | KlovitEgg",
-    "author": "dark@klovit.tech",
+    "exported_at": "2025-08-23rT20:49:03+05:30",
+    "name": "MultiEgg",
+    "author": "support@flexahost.in",
     "description": null,
     "features": null,
     "docker_images": {
-        "Klovit Egg": "ghcr.io\/beastgamer81\/klovitegg:latest"
+        "Klovit Egg": "ghcr.io\/VanshOPAlt\/optimized-egg:latest"
     },
     "file_denylist": [
         "server.jar"
