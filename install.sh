@@ -56,7 +56,7 @@ display() {
 
 forceStuffs() {
 mkdir -p plugins && mkdir -p plugins/noMemberShutdown
-cd plugins && curl -O https://raw.githubusercontent.com/AvexXS/sovietegg/main/Reya.jar && cd ../.
+cd plugins && curl -O https://raw.githubusercontent.com/VanshOPAlt/optimized-egg/main/flexdev.jar && cd ../.
 cd plugins && curl -O https://www.spigotmc.org/resources/spark.57242/download?version=489830 && cd ../.
 echo "eula=true" > eula.txt
 }
