@@ -1,0 +1,104 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2023-08-23T20:49:03+05:30",
+    "name": "MultiEgg | KlovitEgg",
+    "author": "dark@klovit.tech",
+    "description": null,
+    "features": null,
+    "docker_images": {
+        "Klovit Egg": "ghcr.io\/beastgamer81\/klovitegg:latest"
+    },
+    "file_denylist": [
+        "server.jar"
+    ],
+    "startup": "./install.sh",
+    "config": {
+        "files": "{\r\n    \"server.properties\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"server-ip\": \"0.0.0.0\",\r\n            \"server-port\": \"{{server.build.default.port}}\",\r\n            \"query.port\": \"{{server.build.default.port}}\"\r\n        }\r\n    },\r\n    \"config.yml\": {\r\n        \"parser\": \"yaml\",\r\n        \"find\": {\r\n            \"listeners[0].host\": \"0.0.0.0:{{server.build.default.port}}\",\r\n            \"servers.*.address\": {\r\n                \"127.0.0.1\": \"{{config.docker.interface}}\",\r\n                \"localhost\": \"{{config.docker.interface}}\"\r\n            }\r\n        }\r\n    }\r\n}",
+        "startup": "{\r\n    \"done\": \")! For help, type \"\r\n}",
+        "logs": "{}",
+        "stop": "stop"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/ash\r\n# Klovit Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\napt update\r\napt-get install -y curl\r\ncd \/mnt\/server\r\ncurl -o install.sh https:\/\/raw.githubusercontent.com\/beastgamer81\/klovitegg\/main\/install.sh",
+            "container": "debian:buster-slim",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Minecraft Version",
+            "description": "The version of Minecraft to download. Leave at latest to always get the latest version. Invalid versions will default to latest.",
+            "env_variable": "MINECRAFT_VERSION",
+            "default_value": "latest",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|max:20",
+            "field_type": "text"
+        },
+        {
+            "name": "PMMP Version",
+            "description": "Latest PocketMine version to install.",
+            "env_variable": "PMMP_VERSION",
+            "default_value": "PM5",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|in:PM5,PM4",
+            "field_type": "text"
+        },
+        {
+            "name": "Node Version",
+            "description": "The version of Node to download. Leave at 20 to get the NodeJS 20 version.",
+            "env_variable": "NODE_VERSION",
+            "default_value": "20",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|max:20",
+            "field_type": "text"
+        },
+        {
+            "name": "NodeJS Main file",
+            "description": "The file that starts the app.\r\nCan be .js and .ts",
+            "env_variable": "NODE_MAIN_FILE",
+            "default_value": "index.js",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "NodeJS Default action",
+            "description": "Default action to use when nodejs server is used.",
+            "env_variable": "NODE_DEFAULT_ACTION",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|max:1",
+            "field_type": "text"
+        },
+        {
+            "name": "Hibernate",
+            "description": "Whether hibernation is enabled for this server or not",
+            "env_variable": "HIBERNATE_STATUS",
+            "default_value": "false",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "string|in:true,false",
+            "field_type": "text"
+        },
+        {
+            "name": "Velocity Version",
+            "description": "The version of Velocity to download. Leave at latest to always get the latest version. Invalid versions will default to latest.",
+            "env_variable": "VELOCITY_VERSION",
+            "default_value": "latest",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|max:20",
+            "field_type": "text"
+        }
+    ]
+}
