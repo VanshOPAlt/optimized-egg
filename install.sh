@@ -4,32 +4,32 @@ display() {
     echo -e "\033c"
     echo "
     ==========================================================================
-$(tput setaf 6) ⠀⠀FORKED FROM KLOVITEGG https://github.com/beastgamer81/klovitegg
-$(tput setaf 6) ⠀⠀⠀⠀⠀          ⠀       ⠀⠻⣷⣄
-$(tput setaf 6)⠀⠀⠀           ⠀  ⢀⣴⣿⣿⣿⡿⠋⠀⠹⣿⣦⡀
-$(tput setaf 6)⠀⠀            ⢀⣴⣿⣿⣿⣿⣏⠀⠀⠀⠀⠀⠀⢹⣿⣧
-$(tput setaf 6)⠀             ⠙⢿⣿⡿⠋⠻⣿⣿⣦⡀⠀⠀⠀⢸⣿⣿⡆
-$(tput setaf 6)⠀             ⠀⠀⠉⠀⠀⠀⠈⠻⣿⣿⣦⡀⠀⢸⣿⣿⡇
-$(tput setaf 6)⠀⠀⠀⠀            ⢀⣀⣄⡀⠀⠀⠈⠻⣿⣿⣶⣿⣿⣿⠁
-$(tput setaf 6)⠀⠀⠀            ⣠⣿⣿⢿⣿⣶⣶⣶⣶⣾⣿⣿⣿⣿⡁
-$(tput setaf 6)            ⢠⣶⣿⣿⠋⠀⠀⠉⠛⠿⠿⠿⠿⠿⠛⠻⣿⣿⣦⡀
-$(tput setaf 6)            ⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⡿   
-$(tput setaf 6)  
-$(tput setaf 6)     
-$(tput setaf 6)   ☭ Народная армия непобедима!
-$(tput setaf 6)  
-$(tput setaf 6)   
-$(tput setaf 6)    
-$(tput setaf 6) COPYRIGHT 2024 ReyoServers Technology (https://reyo.run) & https://github.com/AvexXS & https://github.com/beastgamer81
+$(tput setaf 6)
+   ███████╗██╗     ███████╗██╗  ██╗ █████╗      ██████╗ ███████╗██╗   ██╗
+   ██╔════╝██║     ██╔════╝██║  ██║██╔══██╗    ██╔════╝ ██╔════╝╚██╗ ██╔╝
+   ███████╗██║     █████╗  ███████║███████║    ██║  ███╗█████╗   ╚████╔╝ 
+   ╚════██║██║     ██╔══╝  ██╔══██║██╔══██║    ██║   ██║██╔══╝    ╚██╔╝  
+   ███████║███████╗███████╗██║  ██║██║  ██║    ╚██████╔╝███████╗   ██║   
+   ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝     ╚═════╝ ╚══════╝   ╚═╝   
+
+$(tput setaf 2)                            F   L   E   X   A   D   E   V
+
+$(tput setaf 3)                        ☭  Best Minecraft Optimized PaperEgg ☭
+
+$(tput setaf 6)   Forked from: Optimized-Egg by VanshOPAlt
+$(tput setaf 6)   Source: https://github.com/VanshOPAlt/optimized-egg
+
+$(tput setaf 6)   FlexaDeV Enhancements: https://github.com/VanshOPAlt
 
     ==========================================================================
-    "  
+"
 }
+
 
 forceStuffs() {
 mkdir -p plugins && mkdir -p plugins/noMemberShutdown
 cd plugins && curl -O https://cdn.modrinth.com/data/DgUoVPBP/versions/QucVTrXS/IdleServerShutdown-1.3.jar && cd ../.
-cd plugins && cd noMemberShutdown && curl -O https://raw.githubusercontent.com/AvexXS/SovietEgg/main/config.yml && cd ../. && cd ../.
+cd plugins && cd noMemberShutdown && curl -O https://raw.githubusercontent.com/VanshOPAlt/optimized-egg/main/config.yml && cd ../. && cd ../.
 echo "eula=true" > eula.txt
 }
 
