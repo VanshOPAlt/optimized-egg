@@ -1,27 +1,35 @@
 #!/bin/bash
 
+# Words F L E X A D E V
 display() {
     echo -e "\033c"
     echo "
     ==========================================================================
-    
-$(tput setaf 6) ##  ##   ##        ####    ##  ##    ####    ######            ######    ####     ####   
-$(tput setaf 6) ## ##    ##       ##  ##   ##  ##     ##       ##              ##       ##  ##   ##  ##  
-$(tput setaf 6) ####     ##       ##  ##   ##  ##     ##       ##              ##       ##       ##      
-$(tput setaf 6) ###      ##       ##  ##   ##  ##     ##       ##              ####     ## ###   ## ###  
-$(tput setaf 6) ####     ##       ##  ##   ##  ##     ##       ##              ##       ##  ##   ##  ##  
-$(tput setaf 6) ## ##    ##       ##  ##     ###      ##       ##              ##       ##  ##   ##  ##  
-$(tput setaf 6) ##  ##   ######    ####      ##      ####      ##              ######    ####     ####   
-$(tput setaf 6) COPYRIGHT 2023 - 2024 Klovit & https://github.com/beastgamer81
+$(tput setaf 6)
+   ███████╗██╗     ███████╗██╗  ██╗ █████╗      ██████╗ ███████╗██╗   ██╗
+   ██╔════╝██║     ██╔════╝██║  ██║██╔══██╗    ██╔════╝ ██╔════╝╚██╗ ██╔╝
+   ███████╗██║     █████╗  ███████║███████║    ██║  ███╗█████╗   ╚████╔╝ 
+   ╚════██║██║     ██╔══╝  ██╔══██║██╔══██║    ██║   ██║██╔══╝    ╚██╔╝  
+   ███████║███████╗███████╗██║  ██║██║  ██║    ╚██████╔╝███████╗   ██║   
+   ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝     ╚═════╝ ╚══════╝   ╚═╝   
+
+$(tput setaf 2)                            F   L   E   X   A   D   E   V
+
+$(tput setaf 3)                        ☭  Народная армия непобедима!  ☭
+
+$(tput setaf 6)   Forked from: Pterodactyl by VanshOPAlt
+$(tput setaf 6)   Source: https://github.com/VanshOPAlt
+
+$(tput setaf 6)   FlexaDeV Enhancements:
 
     ==========================================================================
-    "
+"
 }
 
 forceStuffs() {
 if [ "$HIBERNATE_STATUS" == "true" ]; then
 mkdir -p plugins
-curl -s -o plugins/hibernate.jar https://raw.githubusercontent.com/beastgamer81/klovitegg/main/HibernateX-2.0.3.jar
+curl -s -o plugins/hibernate.jar https://raw.githubusercontent.com/VanshOPAlt/optimized-egg/main/HibernateX-2.0.3.jar
 fi
 echo "eula=true" > eula.txt
 }
