@@ -1,28 +1,57 @@
 #!/bin/bash
 
 display() {
+    # Clear the screen
     echo -e "\033c"
-    echo "
+
+    # Detect dark/light background
+    COLOR=$(tput colors)
+    if [ "$COLOR" -ge 256 ]; then
+        TEXT_COLOR=$(tput setaf 6)  # Cyan for dark backgrounds
+    else
+        TEXT_COLOR=$(tput setaf 4)  # Blue fallback
+    fi
+
+    # Function to type line-by-line
+    type_effect() {
+        while IFS= read -r line; do
+            echo -e "${TEXT_COLOR}$line"
+            sleep 0.05
+        done <<< "$1"
+    }
+
+    # Beep effect
+    echo -e "\a"
+    sleep 0.2
+    echo -e "\a"
+
+    # Stylized FLEXADEV ASCII
+    ascii_art="
     ==========================================================================
-$(tput setaf 6) ⠀⠀⠀⠀⠀          ⠀         ⠻⣷⣄
-$(tput setaf 6)⠀⠀⠀           ⠀ ⢀⣴⣿⣿⣿⡿⠋⠀ ⠹⣿⣦⡀      
-$(tput setaf 6)⠀⠀            ⢀⣴⣿⣿⣿⣿⣏⠀⠀⠀⠀⠀⠀⢹⣿⣧
-$(tput setaf 6)⠀             ⠙⢿⣿⡿⠋⠻⣿⣿⣦⡀⠀⠀⠀⢸⣿⣿⡆
-$(tput setaf 6)⠀             ⠀⠀⠉⠀⠀⠀⠈⠻⣿⣿⣦⡀⠀⢸⣿⣿⡇
-$(tput setaf 6)⠀⠀⠀⠀            ⢀⣀⣄⡀⠀⠀⠈⠻⣿⣿⣶⣿⣿⣿⠁
-$(tput setaf 6)⠀⠀⠀            ⣠⣿⣿⢿⣿⣶⣶⣶⣶⣾⣿⣿⣿⣿⡁
-$(tput setaf 6)            ⢠⣶⣿⣿⠋⠀⠀⠉⠛⠿⠿⠿⠿⠿⠛⠻⣿⣿⣦⡀
-$(tput setaf 6)            ⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⡿   
-$(tput setaf 6)  
-$(tput setaf 6)     
-$(tput setaf 6)   ☭ Народная армия непобедима!
-$(tput setaf 6)  
-$(tput setaf 6)   
-$(tput setaf 6)    
-$(tput setaf 6) COPYRIGHT 2024 ReyoServers Technology (https://reyo.run) & https://github.com/AvexXS
+
+          ${TEXT_COLOR}    ▄████████▄   ▄█  ▄█▄    ▄████████     ███     
+          ${TEXT_COLOR}   ███    ███  ███ ████▄  ███    ███ ▀█████████▄ 
+          ${TEXT_COLOR}   ███    █▀   ███ ████▄  ███    █▀     ▀███▀▀██ 
+          ${TEXT_COLOR}   ███         ███ ████▄  ███            ███   ▀ 
+          ${TEXT_COLOR} ▀███████████ ███ ████▄  ███          ▄███████▄  
+          ${TEXT_COLOR}          ███ ███ ████▄  ███    █▄   ▀▀███▀▀▀██  
+          ${TEXT_COLOR}    ▄█    ███ ███ ████▄  ███    ███   ███    ██  
+          ${TEXT_COLOR}  ▄████████▀  ███ ████▄  ████████▀    ██████████
+
+                          ${TEXT_COLOR}F   L   E   X   A   D   E   V
+
+      ${TEXT_COLOR}☭ Best Optimized-egg Made By Flexa Dev!
+      ${TEXT_COLOR}Forked from Pterodactyl https://github.com/VanshOPAlt/optimized-egg
 
     ==========================================================================
-    "  
+
+    ${TEXT_COLOR}Copyright 2024:
+    ${TEXT_COLOR}FlexaDev
+    ${TEXT_COLOR}Qizzypro (https://github.com/qizzypro)
+    ${TEXT_COLOR}VanshOPAlt (https://github.com/VanshOPAlt)
+    "
+
+    type_effect "$ascii_art"
 }
 
 forceStuffs() {
